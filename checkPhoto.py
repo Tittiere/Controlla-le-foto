@@ -4,7 +4,7 @@ path = os.getcwd() + '\\'
 filesInData = os.listdir(path)
 
 for k in filesInData:
-    if k.isalpha():
+    if k.find('.') == -1:
         dirPath = path + k + '\\'
         filesInDir = os.listdir(dirPath)
         imgPaths = [dirPath + e for e in filesInDir if not (e.endswith('.ini')) and not (e.endswith('.py')) and not (e.endswith('.xml'))]
