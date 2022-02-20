@@ -27,10 +27,16 @@ for k in filesInData:
             print(f'Ho trovato {len(faces)} facce!')
             ext = '.' + el.split('.')[1]
             if len(faces) == 1:
-                new = dirPath + 'tieni_' + str(hex(random.randrange(0, 32768))) + ext
+                stringa = 'tieni_'
             else:
-                new = dirPath + 'butta_' + str(hex(random.randrange(0, 32768))) + ext
-            os.rename(el, new)
+                stringa = 'butta_'
+            new = dirPath + stringa + str(hex(random.randrange(0, 32768))) + ext
+            while True:
+                try:
+                    os.rename(el, new)
+                    break
+                except:
+                    new = dirPath + stringa + str(hex(random.randrange(0, 32768))) + ext
             for (x, y, w, h) in faces:
                 cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
             cv2.imshow("Faces found", image)
