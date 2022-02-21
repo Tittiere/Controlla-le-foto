@@ -1,1 +1,2 @@
+# Istruzioni di utilizzo:
 Il programma necessita del file .xml per funzionare correttamente. Posizionare l'eseguibile insieme al file .xml in una cartella che racchiude le cartelle che contengono le foto (ogni cartella dovrebbe avere foto di una sola persona, il nome della cartella dovrebbe essere il nome della persona ritratta). Il programma scorrerà una ad una le foto e controllerà se sono utilizzabili per il training del modello di face recognition.
