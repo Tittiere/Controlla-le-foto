@@ -1,4 +1,4 @@
 # Istruzioni di utilizzo:
 Il programma necessita del file .xml per funzionare correttamente. Posizionare l'eseguibile insieme al file .xml in una cartella che racchiude le cartelle che contengono le foto (ogni cartella dovrebbe avere foto di una sola persona, il nome della cartella dovrebbe essere il nome della persona ritratta). Il programma scorrerà una ad una le foto e controllerà se sono utilizzabili per il training del modello di face recognition.
-## come scaricare:
+## Come scaricare:
 Sulla sinistra di questa pagina c'è una scheda con scritto "releases". Clicca l'ultima versione (es. Check-photos-vX.X) sotto la scritta releases, contrassegnata dal piccolo logo verde con scritto "Latest". Nella pagina che si apre, nella sezione "Assets", scaricare il file "checkPhoto-vX.X.exe" e, se non lo hai già, il file "haarcascade_frontalface_default.xml". Segui le istruzioni d'uso per utilizzo corretto. Riporta qualsiasi bug che sia riscontrato.
