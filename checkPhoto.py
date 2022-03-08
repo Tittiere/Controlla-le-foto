@@ -9,26 +9,19 @@ for k in filesInData:
         dirPath = path + k + '\\'
         filesInDir = os.listdir(dirPath)
         imgPaths = [dirPath + e for e in filesInDir if not (e.endswith('.ini')) and not (e.endswith('.py')) and not (e.endswith('.xml'))]
-        for (i, el)  in enumerate(imgPaths):
-            img = Image.open(el)
-            width, height = img.size
-            if width > height:
-                img = img.resize((1000, 750))
-                img = img.rotate(-90, expand=True)
-            else:
-                img = img.resize((750, 1000))
-            img.save(el)
-
-for k in filesInData:
-    if k.find('.') == -1:
-        dirPath = path + k + '\\'
-        filesInDir = os.listdir(dirPath)
-        imgPaths = [dirPath + e for e in filesInDir if not (e.endswith('.ini')) and not (e.endswith('.py')) and not (e.endswith('.xml'))]
 
         cascPath = path + "haarcascade_frontalface_default.xml"
         faceCascade = cv2.CascadeClassifier(cascPath)
 
         for (i, el)  in enumerate(imgPaths):
+            img = Image.open(el)
+            width, height = img.size
+            if width > height:
+                img = img.resize((640, 480))
+                img = img.rotate(-90, expand=True)
+            else:
+                img = img.resize((480, 640))
+            img.save(el)
             image = cv2.imread(el)
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
