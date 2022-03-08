@@ -1,7 +1,23 @@
+from PIL import Image
 import random, cv2, os
 
 path = os.getcwd() + '\\'
 filesInData = os.listdir(path)
+
+for k in filesInData:
+    if k.find('.') == -1:
+        dirPath = path + k + '\\'
+        filesInDir = os.listdir(dirPath)
+        imgPaths = [dirPath + e for e in filesInDir if not (e.endswith('.ini')) and not (e.endswith('.py')) and not (e.endswith('.xml'))]
+        for (i, el)  in enumerate(imgPaths):
+            img = Image.open(el)
+            width, height = img.size
+            if width > height:
+                img = img.resize((1000, 750))
+                img = img.rotate(-90, expand=True)
+            else:
+                img = img.resize((750, 1000))
+            img.save(el)
 
 for k in filesInData:
     if k.find('.') == -1:
