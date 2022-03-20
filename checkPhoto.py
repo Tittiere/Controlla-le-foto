@@ -2,6 +2,7 @@ from PIL import Image
 import random, cv2, os
 
 path = os.getcwd() + '\\'
+# path = os.path.dirname(os.path.realpath(__file__)) + '\\'
 filesInData = os.listdir(path)
 
 for k in filesInData:
