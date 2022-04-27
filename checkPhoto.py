@@ -1,13 +1,14 @@
 from PIL import Image
 import random, cv2, os
 
-path = os.getcwd() + '\\'
-# path = os.path.dirname(os.path.realpath(__file__)) + '\\'
+path = os.getcwd() + os.path.sep
+# path = os.path.dirname(os.path.realpath(__file__)) + os.path.sep
+jsonPath = path + os.path.sep + "config.json"
 filesInData = os.listdir(path)
 
 for k in filesInData:
     if k.find('.') == -1:
-        dirPath = path + k + '\\'
+        dirPath = path + k + os.path.sep
         filesInDir = os.listdir(dirPath)
         imgPaths = [dirPath + e for e in filesInDir if not (e.endswith('.ini')) and not (e.endswith('.py')) and not (e.endswith('.xml'))]
 
